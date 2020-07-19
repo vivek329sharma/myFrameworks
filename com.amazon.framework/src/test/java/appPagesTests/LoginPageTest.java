@@ -16,17 +16,25 @@ public class LoginPageTest extends testBase {
 
 		LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
 
-		loginPage.pageTitleVerification();
-		loginPage.amazonLogoVerification();
-
 		loginPage.login(username, password);
 
 		logger.pass("Login Success");
 	}
 	
 	@Test(priority=2)
+	public void amazonFailedTest() {
+		logger = report.createTest("Amazon Failed Test");
+		logger.fail("Failed Test");
+	}
+	
+	@Test(priority=3)
 	public void amazonLogoTitleTest() {
 		logger = report.createTest("Amazon Logo & Title Test");
-		logger.fail("Testing Failed");
+		LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
+
+		loginPage.pageTitleVerification();
+		loginPage.amazonLogoVerification();
+		
+		logger.pass("Amazon Logo & Title Verified");
 	}
 }

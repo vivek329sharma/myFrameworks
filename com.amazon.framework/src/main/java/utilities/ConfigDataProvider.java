@@ -10,7 +10,7 @@ public class ConfigDataProvider {
 	public ConfigDataProvider() {
 		try {
 			prop = new Properties();
-			FileInputStream fis = new FileInputStream("C:\\Users\\vivek\\eclipse-workspace\\com.amazon.framework\\src\\main\\java\\cofigProperties\\congif.properties");
+			FileInputStream fis = new FileInputStream("./src/main/java/cofigProperties/congif.properties");
 			prop.load(fis);
 			System.out.println("Config Properties File Loaded");
 		} catch (Exception e) {
